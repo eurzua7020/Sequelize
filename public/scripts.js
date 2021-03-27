@@ -35,14 +35,10 @@ async function dinner () {
       makeRows.innerHTML = `
               <td>${element.hall_id}</td>
               <td>${element.hall_name}</td>
-              <td>${element.hall_address}</td>
-          </tr>      
+              <td>${element.hall_address}</td>   
       `;
       information.append(makeRows)
   });
-  
-  
-
 }
 
 window.onload = dinner();
