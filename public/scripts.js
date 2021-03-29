@@ -1,3 +1,5 @@
+/*import DiningHall from '../models/DiningHall';*/
+
 /*async function getData() {
   const response = await fetch('/api/dining');
   const alpha = await response.json();
@@ -7,9 +9,9 @@
 
 
 function diningHall() {
-  const bravo = document.querySelector('.target')
-  dining.forEach((hall) => {
-    const charlie = document.createElement("tr")
+  const bravo = document.querySelector('.target');
+  dining.forEach((element) => {
+    const charlie = document.createElement("tr");
     charlie.innerHTML = `
     <td>${element.hall_id}</td>
     <td>${element.hall_name}</td>
@@ -20,8 +22,12 @@ function diningHall() {
 
 }
 
-window.onload = getData();*/
+async function windowActions(){
+  const alpha = diningHall();
+  await getData(alpha)
+}
 
+window.onload = windowActions(); */
 
 
 async function dinner () {
@@ -30,12 +36,12 @@ async function dinner () {
   const arrayDinner = dinnerInfo.data; 
   const information = document.querySelector('.target');
 
-  arrayDinner.forEach((element) => {
+  arrayDinner.forEach((x) => {
       const makeRows = document.createElement('tr');
       makeRows.innerHTML = `
-              <td>${element.hall_id}</td>
-              <td>${element.hall_name}</td>
-              <td>${element.hall_address}</td>   
+              <td>${x.hall_id}</td>
+              <td>${x.hall_name}</td>
+              <td>${x.hall_address}</td>   
       `;
       information.append(makeRows)
   });
